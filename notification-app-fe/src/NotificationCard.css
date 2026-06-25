@@ -1,0 +1,57 @@
+.notification-card{
+    background:white;
+    padding:20px;
+    margin-bottom:18px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.type,
+.priority{
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.placement{
+    background:#2e7d32;
+}
+
+.result{
+    background:#1565c0;
+}
+
+.event{
+    background:#ef6c00;
+}
+
+.high{
+    background:#d32f2f;
+}
+
+.medium{
+    background:#f57c00;
+}
+
+.low{
+    background:#616161;
+}
+
+.notification-card h3{
+    margin:0;
+    color:#222;
+}
+
+.notification-card p{
+    margin-top:12px;
+    color:#666;
+    font-size:14px;
+}

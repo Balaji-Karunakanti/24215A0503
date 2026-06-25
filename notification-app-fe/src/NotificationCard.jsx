@@ -1,42 +1,32 @@
-import { Card, CardContent, Typography, Chip, Stack } from "@mui/material";
+import "./NotificationCard.css";
 
 export function NotificationCard({ notification }) {
-  const getColor = (type) => {
-    switch (type) {
-      case "Placement":
-        return "success";
-      case "Result":
-        return "primary";
-      case "Event":
-        return "warning";
-      default:
-        return "default";
-    }
+
+  const getPriority = (type) => {
+    if (type === "Placement") return "High";
+    if (type === "Result") return "Medium";
+    return "Low";
   };
 
   return (
-    <Card elevation={3}>
-      <CardContent>
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          mb={1}
-        >
-          <Chip
-            label={notification.Type}
-            color={getColor(notification.Type)}
-          />
+    <div className="notification-card">
 
-          <Typography variant="caption" color="text.secondary">
-            {notification.Timestamp}
-          </Typography>
-        </Stack>
+      <div className="card-top">
 
-        <Typography variant="body1">
-          {notification.Message}
-        </Typography>
-      </CardContent>
-    </Card>
+        <span className={`type ${notification.Type.toLowerCase()}`}>
+          {notification.Type}
+        </span>
+
+        <span className={`priority ${getPriority(notification.Type).toLowerCase()}`}>
+          {getPriority(notification.Type)}
+        </span>
+
+      </div>
+
+      <h3>{notification.Message}</h3>
+
+      <p>{notification.Timestamp}</p>
+
+    </div>
   );
 }
